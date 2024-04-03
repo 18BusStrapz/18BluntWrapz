@@ -3,6 +3,9 @@
 		"googlecloudtools.cloudcode",
 		"ms-dotnettools.vscode-dotnet-sdk",
 		"ms-edgedevtools.vscode-edge-devtools",
-		"ms-kubernetes-tools.vscode-kubernetes-tools"
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+		"ms-dotnettools.vscode-dotnet-runtime",
+		"ms-dotnettools.vscode-dotnet-pack",
+		"bard83.csharpextension"
 	]
 }
