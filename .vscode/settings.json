@@ -4,5 +4,6 @@
 	"prettier.printWidth": 92,
 	"prettier.singleQuote": true,
 	"prettier.useTabs": true,
-	"cmake.sourceDirectory": "C:/Users/leann/OneDrive/BusWrapBattle/BluntWrapz/.vscode"
+	"cmake.sourceDirectory": "C:/Users/leann/OneDrive/BusWrapBattle/BluntWrapz/.vscode",
+	"python.analysis.autoImportCompletions": true
 }

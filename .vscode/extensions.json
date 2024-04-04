@@ -6,6 +6,7 @@
 		"ms-kubernetes-tools.vscode-kubernetes-tools",
 		"ms-dotnettools.vscode-dotnet-runtime",
 		"ms-dotnettools.vscode-dotnet-pack",
-		"bard83.csharpextension"
+		"bard83.csharpextension",
+		"leizongmin.node-module-intellisense"
 	]
 }

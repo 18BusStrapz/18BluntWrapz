@@ -1,4 +1,20 @@
 import { CancellationToken, ProviderResult, TextDocumentContentProvider, Event, Uri, EventEmitter, Disposable } from "vscode";
+import { toExtension, JSFIDDLE_SCHEME, Fiddle, getFiddleContent } from "./fiddleRepository";
+import { basename } from "path";
+
+export class JSFiddleDocumentContentProvider implements TextDocumentContentProvider, Disposable {
+	// ...
+
+	provideTextDocumentContent(uri: Uri, token: CancellationToken): ProviderResult<string> {
+		// Extract the fiddle ID from the URI
+		const fiddleId = basename(uri.path);
+
+		// Get the content of the fiddle
+		return getFiddleContent(fiddleId);
+	}
+
+	// ...
+}import { CancellationToken, ProviderResult, TextDocumentContentProvider, Event, Uri, EventEmitter, Disposable } from "vscode";
 import { toExtension, JSFIDDLE_SCHEME, Fiddle } from "./fiddleRepository";
 import { basename } from "path";
 

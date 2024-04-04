@@ -1,63 +1,31 @@
-import * as vscode from 'vscode';
-import * as Octokit from '@octokit/rest';
+class RapBattle:
+    def __init__(self, rapper1, rapper2):
+        self.rapper1 = rapper1
+        self.rapper2 = rapper2
 
-const GITHUB_AUTH_PROVIDER_ID = 'github';
-// The GitHub Authentication Provider accepts the scopes described here:
-// https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
-const SCOPES = ['user:email'];
+    def get_winner(self):
+        if self.rapper1.points > self.rapper2.points:
+            return self.rapper1
+        elif self.rapper1.points < self.rapper2.points:
+            return self.rapper2
 
-export class Credentials {
-	private octokit: Octokit.Octokit | undefined;
+    def get_loser(self):
+        if self.rapper1.points < self.rapper2.points:
+            return self.rapper1
+        elif self.rapper1.points > self.rapper2.points:
+            return self.rapper2
 
-	async initialize(context: vscode.ExtensionContext): Promise<void> {
-		this.registerListeners(context);
-		await this.setOctokit();
-	}
+    def get_draw(self):
+        if self.rapper1.points == self.rapper2.points:
+            return True
+        else:
+            return False
 
-	private async setOctokit() {
-		/**
-		 * By passing the `createIfNone` flag, a numbered badge will show up on the accounts activity bar icon.
-		 * An entry for the sample extension will be added under the menu to sign in. This allows quietly 
-		 * prompting the user to sign in.
-		 * */
-		const session = await vscode.authentication.getSession(GITHUB_AUTH_PROVIDER_ID, SCOPES, { createIfNone: false });
+    def get_points(self):
+        return self.rapper1.points, self.rapper2.points
 
-		if (session) {
-			this.octokit = new Octokit.Octokit({
-				auth: session.accessToken
-			});
-
-			return;
-		}
-
-		this.octokit = undefined;
-	}
-
-	registerListeners(context: vscode.ExtensionContext): void {
-		/**
-		 * Sessions are changed when a user logs in or logs out.
-		 */
-		context.subscriptions.push(vscode.authentication.onDidChangeSessions(async e => {
-			if (e.provider.id === GITHUB_AUTH_PROVIDER_ID) {
-				await this.setOctokit();
-			}
-		}));
-	}
-
-	async getOctokit(): Promise<Octokit.Octokit> {
-		if (this.octokit) {
-			return this.octokit;
-		}
-
-		/**
-		 * When the `createIfNone` flag is passed, a modal dialog will be shown asking the user to sign in.
-		 * Note that this can throw if the user clicks cancel.
-		 */
-		const session = await vscode.authentication.getSession(GITHUB_AUTH_PROVIDER_ID, SCOPES, { createIfNone: true });
-		this.octokit = new Octokit.Octokit({
-			auth: session.accessToken
-		});
-
-		return this.octokit;
-	}
-}
+    class Rapper:
+        def __init__(self, name, points):
+            self.name = name
+            self.points = points
+        
