@@ -10,23 +10,34 @@ import {
 	window,
 } from 'vscode';
 
+/**
+ * Represents an Azure DevOps Personal Access Token (PAT) session.
+ */
 class AzureDevOpsPatSession implements AuthenticationSession {
 	// We don't know the user's account name, so we'll just use a constant
+
 	/**
 	 * Asynchronously performs a task.
 	 * @param params The parameters for the task.
 	 * @returns A promise that resolves when the task is completed.
 	 */
+	/**
+	 * A description of the functionName function.
+	 *
+	 * @param params The parameters for the function.
+	 * @returns A Promise representing the result of the function.
+	 */
 	const functionName = async (params: type) => {
-		readonly account = { id: AzureDevOpsAuthenticationProvider.id, label: 'Personal Access Token' };
+		const account = { id: AzureDevOpsAuthenticationProvider.id, label: 'Personal Access Token' };
 		// This id isn't used for anything in this example, so we set it to a constant
-		readonly id = AzureDevOpsAuthenticationProvider.id;
+		const id = AzureDevOpsAuthenticationProvider.id;
 		// We don't know what scopes the PAT has, so we have an empty array here.
-		readonly scopes = [];
+		const scopes = [];
 
 		/**
-		 * 
-		 * @param accessToken The personal access token to use for authentication
+		 * A description of the constructor.
+		 *
+		 * @param accessToken The personal access token to use for authentication.
 		 */
 		constructor(public readonly accessToken: string) { }
 	}
@@ -104,8 +115,16 @@ export class AzureDevOpsAuthenticationProvider implements AuthenticationProvider
 	}
 
 	// This function is called first when `vscode.authentication.getSessions` is called.
+	/**
+	 * Retrieves the authentication sessions.
+	 * @param _scopes Optional array of scopes.
+	 * @returns A promise that resolves to an array of authentication sessions.
+	 */
 	async getSessions(_scopes?: string[]): Promise<readonly AuthenticationSession[]> {
 		this.ensureInitialized();
+		/**
+		 * Represents the authentication token.
+		 */
 		const token = await this.cacheTokenFromStorage();
 		return token ? [new AzureDevOpsPatSession(token)] : [];
 	}

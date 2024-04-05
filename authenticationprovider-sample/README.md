@@ -3,6 +3,7 @@
 }
 
 {
+}
 	"description": "Demonstrates VS Code's authentication provider API by registering and using an Azure DevOps Personal Access Token authentication provider."
 }
 
