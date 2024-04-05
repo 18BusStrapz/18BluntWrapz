@@ -11,6 +11,13 @@ This extension adds an entry to the status bar that shows the name of the curren
 ## Running the example
 
 - Open this example in VS Code
+- `npm instal![Show the folder of the active file](https://raw.githubusercontent.com/Microsoft/vscode-extension-samples/main/basic-multi-root-sample/preview.gif)
+
+## Running the example
+
+- Open this example in VS Code
 - `npm install`
+- `npm run compile`
+- `F5` to start debugging
 - `npm run compile`
 - `F5` to start debugging
