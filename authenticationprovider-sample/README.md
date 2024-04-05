@@ -1,6 +1,10 @@
-# Azure DevOps Auth Provider - Authentication Provider API Sample
+{
+	"description": "Azure DevOps Auth Provider - Authentication Provider API Sample"
+}
 
-Demonstrates VS Code's authentication provider API by registering and using an Azure DevOps Personal Access Token authentication provider.
+{
+	"description": "Demonstrates VS Code's authentication provider API by registering and using an Azure DevOps Personal Access Token authentication provider."
+}
 
 ## VS Code API
 

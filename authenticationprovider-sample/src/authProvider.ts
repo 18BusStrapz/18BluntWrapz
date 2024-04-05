@@ -12,17 +12,24 @@ import {
 
 class AzureDevOpsPatSession implements AuthenticationSession {
 	// We don't know the user's account name, so we'll just use a constant
-	readonly account = { id: AzureDevOpsAuthenticationProvider.id, label: 'Personal Access Token' };
-	// This id isn't used for anything in this example, so we set it to a constant
-	readonly id = AzureDevOpsAuthenticationProvider.id;
-	// We don't know what scopes the PAT has, so we have an empty array here.
-	readonly scopes = [];
-
 	/**
-	 * 
-	 * @param accessToken The personal access token to use for authentication
+	 * Asynchronously performs a task.
+	 * @param params The parameters for the task.
+	 * @returns A promise that resolves when the task is completed.
 	 */
-	constructor(public readonly accessToken: string) { }
+	const functionName = async (params: type) => {
+		readonly account = { id: AzureDevOpsAuthenticationProvider.id, label: 'Personal Access Token' };
+		// This id isn't used for anything in this example, so we set it to a constant
+		readonly id = AzureDevOpsAuthenticationProvider.id;
+		// We don't know what scopes the PAT has, so we have an empty array here.
+		readonly scopes = [];
+
+		/**
+		 * 
+		 * @param accessToken The personal access token to use for authentication
+		 */
+		constructor(public readonly accessToken: string) { }
+	}
 }
 
 export class AzureDevOpsAuthenticationProvider implements AuthenticationProvider, Disposable {
