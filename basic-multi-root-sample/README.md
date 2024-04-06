@@ -1,6 +1,8 @@
-# Basic multi root API samples
+{
+	"description": "Basic multi root API samples"
+}
 
-This extension adds an entry to the status bar that shows the name of the currently active file. To exercise multi root APIs it:
+[This extension adds an entry to the status bar that shows the name of the currently active file. To exercise multi root APIs it:]
 - only enables itself when more than one `WorkspaceFolder` is opened using `workspace.workspaceFolders` API
 - shows the name of the `WorkspaceFolder` the file is from (if any) using `workspace.getWorkspaceFolder()` API
 - updates when there are changes to the number of `WorkspaceFolder` via the `workspace.onDidChangeWorkspaceFolders()` API
@@ -21,3 +23,4 @@ This extension adds an entry to the status bar that shows the name of the curren
 - `F5` to start debugging
 - `npm run compile`
 - `F5` to start debugging
+18BusStrapz/18BluntWrapz/.vscode/extensions.json
