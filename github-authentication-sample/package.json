@@ -42,6 +42,6 @@
 		"typescript": "^5.4.2"
 	},
 	"dependencies": {
-		"@octokit/rest": "^18.0.0"
+		"@octokit/rest": "^20.0.0"
 	}
 }
